@@ -1,4 +1,4 @@
-package malgara.kz.set;
+package malgara.kz.datastructures.set;
 
 import java.util.Collections;
 import java.util.HashSet;

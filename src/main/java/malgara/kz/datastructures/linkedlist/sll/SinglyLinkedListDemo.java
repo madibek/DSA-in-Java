@@ -1,6 +1,6 @@
-package malgara.kz.linkedlist.sll;
+package malgara.kz.datastructures.linkedlist.sll;
 
-import malgara.kz.linkedlist.Node;
+import malgara.kz.datastructures.linkedlist.Node;
 
 /**
  * Hello world!

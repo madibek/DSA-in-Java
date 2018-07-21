@@ -1,4 +1,4 @@
-package malgara.kz.queues;
+package malgara.kz.datastructures.queues;
 
 public class PriorityQueue {
 

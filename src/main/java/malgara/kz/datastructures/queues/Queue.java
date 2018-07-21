@@ -1,6 +1,6 @@
-package malgara.kz.queues;
+package malgara.kz.datastructures.queues;
 
-import malgara.kz.linkedlist.Node;
+import malgara.kz.datastructures.linkedlist.Node;
 
 public class Queue {
 

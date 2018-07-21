@@ -1,4 +1,6 @@
-package malgara.kz.bst;
+package malgara.kz.datastructures.bst;
+
+import malgara.kz.datastructures.Node;
 
 public class BinarySearchTree {
 

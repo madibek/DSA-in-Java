@@ -1,4 +1,4 @@
-package malgara.kz.linkedlist.dll;
+package malgara.kz.datastructures.linkedlist.dll;
 
 public class DoublyLinkedListDemo {
 

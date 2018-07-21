@@ -1,4 +1,4 @@
-package malgara.kz.heap;
+package malgara.kz.datastructures.heap;
 
 public class HeapDemo {
 

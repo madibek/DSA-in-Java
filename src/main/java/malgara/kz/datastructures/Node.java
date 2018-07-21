@@ -1,4 +1,4 @@
-package malgara.kz.bst;
+package malgara.kz.datastructures;
 
 public class Node {
 

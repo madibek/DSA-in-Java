@@ -1,4 +1,4 @@
-package malgara.kz.linkedlist;
+package malgara.kz.datastructures.linkedlist;
 
 public class Node {
 

@@ -1,6 +1,6 @@
-package malgara.kz.linkedlist.dll;
+package malgara.kz.datastructures.linkedlist.dll;
 
-import malgara.kz.linkedlist.Node;
+import malgara.kz.datastructures.linkedlist.Node;
 
 class DoublyLinkedList {
 
