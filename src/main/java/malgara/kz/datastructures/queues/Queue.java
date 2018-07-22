@@ -79,4 +79,7 @@ public class Queue {
         }
     }
 
+    public boolean hasMore() {
+        return count > 0;
+    }
 }
