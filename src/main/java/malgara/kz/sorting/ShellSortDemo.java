@@ -30,23 +30,21 @@ public class ShellSortDemo {
 
         while (gap > 0) {
 
-            for (int i = 0; i < gap; i++) {
+            int curr = gap;
+            while (curr < arrayToSort.length) {
 
-//                for (int j = i; j > 0 && arrayToSort[j] < arrayToSort[j - gap]; j-=gap) {
-//                    int temp = arrayToSort[j];
-//                    arrayToSort[j] = arrayToSort[j - gap];
-//                    arrayToSort[j - gap] = temp;
-//
-//                }
+                int value = arrayToSort[curr];
+                int i = curr - gap;
 
-                int value = arrayToSort[i];
-                int inner = i;
-                while (inner > i - 1 && arrayToSort[inner - i] > value) {
-                    arrayToSort[inner] = arrayToSort[inner - i];
-                    inner = inner - i;
+                while (i >= 0 && value < arrayToSort[i]) {
+                    arrayToSort[i + gap] = arrayToSort[i];
+                    i = i - gap;
                 }
-                arrayToSort[inner] = value;
+
+                arrayToSort[i + gap] = value;
+                curr = curr + 1;
             }
+
             gap /= 2;
         }
 
