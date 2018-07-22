@@ -8,7 +8,8 @@ public class BubbleSortDemo {
 
         System.out.println(BubbleSortDemo.class.getName());
 
-        int[] arrayToSort = {14, 18, 19, 37, 23, 40, 29, 30, 11};
+//        int[] arrayToSort = {14, 18, 19, 37, 23, 40, 29, 30, 11};
+        int[] arrayToSort = {40, 37, 30, 29, 23, 19, 18, 14, 11};
         System.out.println("Array before sort: " + Arrays.toString(arrayToSort));
 
         int [] sortedArray = bubbleSort(arrayToSort);
@@ -24,7 +25,7 @@ public class BubbleSortDemo {
 
             for (int j = i + 1; j < arrayToSort.length; j++) {
 
-                if (arrayToSort[i] > arrayToSort[j]) {
+                if (arrayToSort[i] < arrayToSort[j]) {
                     swap(arrayToSort, i, j);
                 }
             }

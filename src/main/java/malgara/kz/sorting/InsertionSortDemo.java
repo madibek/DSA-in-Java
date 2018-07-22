@@ -32,14 +32,25 @@ public class InsertionSortDemo {
 
         for (int i = 1; i < arrayToSort.length; i++) {
 
-            key = arrayToSort[i];
-            j = i - 1;
+//            key = arrayToSort[i];
+//            j = i - 1;
+//
+//            while (j >= 0 && arrayToSort[j] > key) {
+//                temp = arrayToSort[j + 1];
+//                arrayToSort[j + 1] = arrayToSort[j];
+//                arrayToSort[j] = temp;
+//                j--;
+//            }
 
-            while (j >= 0 && arrayToSort[j] > key) {
-                temp = arrayToSort[j + 1];
-                arrayToSort[j + 1] = arrayToSort[j];
-                arrayToSort[j] = temp;
-                j--;
+            for (int k = i; k > 0; k--) {
+
+                if (arrayToSort[k] < arrayToSort[k - 1]) {
+                    temp = arrayToSort[k];
+                    arrayToSort[k] = arrayToSort[k - 1];
+                    arrayToSort[k - 1] = temp;
+                } else {
+                    break;
+                }
             }
         }
 
