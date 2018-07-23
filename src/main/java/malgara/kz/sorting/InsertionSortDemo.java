@@ -11,7 +11,7 @@ public class InsertionSortDemo {
         int[] arrayToSort = {14, 18, 19, 37, 23, 40, 29, 30, 11, -1, 45, 67, 3, 5, 89, 5555, 44, 6, 2121};
         System.out.println("Array before sort: " + Arrays.toString(arrayToSort));
 
-        int[] sortedArray = insertionSort2(arrayToSort);
+        int[] sortedArray = insertionSort(arrayToSort);
         System.out.println("Array after sort: " + Arrays.toString(sortedArray));
     }
 
@@ -26,35 +26,24 @@ public class InsertionSortDemo {
             return arrayToSort;
         }
 
-        int j;
-        int key;
-        int temp;
 
         for (int i = 1; i < arrayToSort.length; i++) {
 
-//            key = arrayToSort[i];
-//            j = i - 1;
-//
-//            while (j >= 0 && arrayToSort[j] > key) {
-//                temp = arrayToSort[j + 1];
-//                arrayToSort[j + 1] = arrayToSort[j];
-//                arrayToSort[j] = temp;
-//                j--;
-//            }
+            int value = arrayToSort[i];
 
-            for (int k = i; k > 0; k--) {
-
-                if (arrayToSort[k] < arrayToSort[k - 1]) {
-                    temp = arrayToSort[k];
-                    arrayToSort[k] = arrayToSort[k - 1];
-                    arrayToSort[k - 1] = temp;
-                } else {
-                    break;
-                }
+            for (int j = i - 1; j >= 0 && arrayToSort[j] > value ; j--) {
+                swap(arrayToSort, j, j + 1);
             }
         }
 
         return arrayToSort;
+    }
+
+    private static void swap(int[] arr, int left, int right) {
+
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
     }
 
     private static int[] insertionSort2(int[] arr) {
