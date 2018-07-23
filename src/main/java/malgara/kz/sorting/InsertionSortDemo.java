@@ -11,7 +11,7 @@ public class InsertionSortDemo {
         int[] arrayToSort = {14, 18, 19, 37, 23, 40, 29, 30, 11, -1, 45, 67, 3, 5, 89, 5555, 44, 6, 2121};
         System.out.println("Array before sort: " + Arrays.toString(arrayToSort));
 
-        int[] sortedArray = insertionSort(arrayToSort);
+        int[] sortedArray = insertionSort2(arrayToSort);
         System.out.println("Array after sort: " + Arrays.toString(sortedArray));
     }
 
@@ -55,5 +55,34 @@ public class InsertionSortDemo {
         }
 
         return arrayToSort;
+    }
+
+    private static int[] insertionSort2(int[] arr) {
+
+        if (arr == null) {
+            throw new RuntimeException("Array can not be null");
+        }
+
+        if (arr.length < 2) {
+            // already sorted array with one item
+            return arr;
+        }
+
+        int start = 1;
+        while (start < arr.length) {
+
+            int value = arr[start];
+            int index = start - 1;
+            while (index >= 0 && value < arr[index]) {
+                arr[index + 1] = arr[index];
+                index--;
+            }
+
+            arr[index + 1] = value;
+            start++;
+        }
+
+        return arr;
+
     }
 }
