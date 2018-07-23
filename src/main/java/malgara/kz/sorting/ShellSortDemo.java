@@ -11,7 +11,7 @@ public class ShellSortDemo {
         int[] arrayToSort = {14, 18, 19, 37, 23, 40, 29, 30, 11, -1, 45, 67, 3, 5, 89, 5555, 44, 6, 2121};
         System.out.println("Array before sort: " + Arrays.toString(arrayToSort));
 
-        int[] sortedArray = shellSort2(arrayToSort);
+        int[] sortedArray = shellSort(arrayToSort);
         System.out.println("Array after sort: " + Arrays.toString(sortedArray));
     }
 
@@ -26,29 +26,28 @@ public class ShellSortDemo {
             return arrayToSort;
         }
 
-        int gap = arrayToSort.length / 2;
+        for (int gap = arrayToSort.length; gap > 0; gap = gap / 2) {
 
-        while (gap > 0) {
+            for (int start = gap; start < arrayToSort.length; start++) {
 
-            int curr = gap;
-            while (curr < arrayToSort.length) {
+                int value = arrayToSort[start];
 
-                int value = arrayToSort[curr];
-                int i = curr - gap;
-
-                while (i >= 0 && value < arrayToSort[i]) {
-                    arrayToSort[i + gap] = arrayToSort[i];
-                    i = i - gap;
+                for (int index = start - gap; index >= 0 && arrayToSort[index] > value; index--) {
+                    swap(arrayToSort, index, index + gap);
                 }
 
-                arrayToSort[i + gap] = value;
-                curr = curr + 1;
             }
 
-            gap /= 2;
         }
 
         return arrayToSort;
+    }
+
+    private static void swap(int[] arr, int left, int right) {
+
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
     }
 
     private static int[] shellSort2(int[] arr) {
